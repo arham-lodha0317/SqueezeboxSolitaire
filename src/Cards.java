@@ -1,18 +1,27 @@
 public class Cards {
 
-    String suit;
-    String rank;
+    private String suit;
+    private String rank;
 
-    public Cards(String rank, String suit){
+    Cards(String rank, String suit){
         this.suit = suit;
         this.rank = rank;
     }
 
-    public String getRank() {
+    private String getRank() {
         return rank;
     }
 
-    public String getSuit() {
+    private String getSuit() {
         return suit;
+    }
+
+    boolean stackable(Cards card2){
+        return this.rank.equals(card2.getRank()) || this.suit.equals(card2.getSuit());
+    }
+
+    @Override
+    public String toString() {
+        return rank + suit;
     }
 }
